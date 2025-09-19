@@ -6,15 +6,38 @@
         <style type="text/css">
             /* 이렇게 * 선택자를 쓰는거는 권장하지 않는다. */
             * { margin:0; padding:0; }
-            p { color:#F62727; }
+            p { color:#e96f6f; }
             .class-selector { font-size:100px; }
             #type-selector { background-color:#ddd; }
+            .a {
+                color: blue;
+            }
+            .b {
+                color: rgb(14, 138, 30);
+            }
+            .cc {
+                background-color: rgb(233, 240, 169);
+            }
+            #p1{ color:#ddd; background-color: rgb(201, 115, 10); }
+            #p2{ color: #abdfab; background-color: #124212;}
+            #p3{ color: #f4708c; background-color: yellow;}
         </style>
     </head>
     <body>
         <div id="type-selector">
             <h1 class="class-selector">선택자란?</h1>
             <p> 선택자는 CSS에서 HTML의 특정 요소를 선택하기 위한 규칙입니다.</p>
+        </div>
+        <div>
+            <p class="a cc"> 두번째 div </p>
+        </div>
+        <div>
+            <p class="b cc"> 세번째 div </p>
+        </div>
+        <div>
+            <p id="p1">p1 TEST</p>
+            <p id="p2">p2 TEST</p>
+            <p id="p3">p3 TEST</p>
         </div>
     </body>
 </html>

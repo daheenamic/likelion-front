@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입 페이지</title>
+    <link rel="stylesheet" href="/assets/css/register.css">
 </head>
 <body>
     <form action="/registerExam/regSuccess.html" method="get">
@@ -14,11 +15,11 @@
             <tbody>
                 <tr>
                     <th>* 아이디</th>
-                    <td><input type="text" required></td>
+                    <td><input type="text" id="id" name="id" placeholder="영문과 숫자로만 입력하세요." required></td>
                 </tr>
                 <tr>
                     <th>* 이름</th>
-                    <td><input type="text" id="name" name="name" required></td>
+                    <td><input type="text" id="name" name="name" placeholder="영문 또는 한글만 입력하세요." autocomplete="off" required></td>
                 </tr>
                 <tr>
                     <th>* 비밀번호</th>
@@ -30,7 +31,7 @@
                 </tr>
                 <tr>
                     <th>* 휴대폰 번호</th>
-                    <td><input type="text" placeholder="010-1234-5678" required></td>
+                    <td><input type="text" id="phone" placeholder="010-1234-5678" required></td>
                 </tr>
                 <tr>
                     <th>* 성별</th>
@@ -45,25 +46,6 @@
                     <th>생년월일</th>
                     <td>
                         <input type="date"><br>
-
-                        <select>
-                            <option>연도선택</option>
-                            <option>2024</option>
-                            <option>2025</option>
-                        </select>
-
-                        <select>
-                            <option>월선택</option>
-                            <option value="1">1</option>
-                            <option>2</option>
-                            <option>3</option>
-                        </select>
-
-                        <select>
-                            <option>일선택</option>
-                            <option>1</option>
-                            <option>2</option>
-                        </select>
                     </td>
                 </tr>
                 <tr>
@@ -74,7 +56,7 @@
                     <th>가입경로</th>
                     <td>
                         <select>
-                            <option>선택하세요</option>
+                            <option hidden disabled selected>선택하세요</option>
                             <option>지인 추천</option>
                             <option>검색</option>
                             <option>광고</option>
