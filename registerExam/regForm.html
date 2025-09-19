@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입 페이지</title>
+</head>
+<body>
+    <form action="/registerExam/regSuccess.html" method="get">
+        <h2>회원가입</h2>
+        <p>아래 양식을 작성하여 회원가입을 완료하세요.</p>
+        <p>* 표시는 필수 입력값 입니다.</p>
+        <table border="1">
+            <tbody>
+                <tr>
+                    <th>* 아이디</th>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <th>* 이름</th>
+                    <td><input type="text" id="name" name="name" required></td>
+                </tr>
+                <tr>
+                    <th>* 비밀번호</th>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <th>* 비밀번호 확인</th>
+                    <td><input type="text" required></td>
+                </tr>
+                <tr>
+                    <th>* 휴대폰 번호</th>
+                    <td><input type="text" placeholder="010-1234-5678" required></td>
+                </tr>
+                <tr>
+                    <th>* 성별</th>
+                    <td>
+                        <div class="radio-group">
+                            <label><input type="radio" name="gender" value="M" required>남성</label>
+                            <label><input type="radio" name="gender" value="F" required>여성</label>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th>생년월일</th>
+                    <td>
+                        <input type="date"><br>
+
+                        <select>
+                            <option>연도선택</option>
+                            <option>2024</option>
+                            <option>2025</option>
+                        </select>
+
+                        <select>
+                            <option>월선택</option>
+                            <option value="1">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                        </select>
+
+                        <select>
+                            <option>일선택</option>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이메일</th>
+                    <td><input type="text" placeholder="test@gmail.com"></td>
+                </tr>
+                <tr>
+                    <th>가입경로</th>
+                    <td>
+                        <select>
+                            <option>선택하세요</option>
+                            <option>지인 추천</option>
+                            <option>검색</option>
+                            <option>광고</option>
+                            <option>기타</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <th>관심사 선택</th>
+                    <td>
+                        <label><input type="checkbox">게임</label>
+                        <label><input type="checkbox">영화</label>
+                        <label><input type="checkbox">IT</label>
+                        <label><input type="checkbox">독서</label>
+                        <label><input type="checkbox">여행</label>
+                        <label><input type="checkbox">등산</label>
+                        <label><input type="checkbox">운동</label>
+                    </td>
+                </tr>
+                <tr>
+                    <th>이용약관</th>
+                    <td>
+                        <ul>
+                            <li>서비스 이용 규칙에 대한 내용 어쩌구 저쩌구</li>
+                            <li>개인정보 처리 방침에 대한 내용 어쩌구 저쩌구</li>
+                            <li>광고성 정보 수신에 대한 내용 어쩌구 저쩌구</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label><input type="checkbox" required>서비스 이용 규칙에 동의합니다.</label><br>
+                        <label><input type="checkbox" required>개인정보 처리 방침에 동의합니다.</label><br>
+                        <label><input type="checkbox">광고성 정보 수신에 동의합니다. (선택)</label>
+                    </td>
+                </tr>    
+            </tbody>
+        </table>
+        <div>
+            <button type="submit">회원가입</button>
+        </div>
+    </form>
+</body>
+</html>

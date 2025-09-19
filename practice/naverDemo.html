@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>네이버 스타일 데모</title>
+  <style>
+    :root {
+      --naver-green: #03c75a;
+      --text: #222;
+      --muted: #666;
+      --border: #e5e7eb;
+      --bg: #f7f8fa;
+      --card: #ffffff;
+      --link: #2563eb;
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+
+    a { color: var(--text); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+    .header-inner {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: grid;
+      grid-template-columns: 140px 1fr 140px;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 28px;
+      letter-spacing: 0.5px;
+      color: var(--naver-green);
+    }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .search input[type="text"] {
+      flex: 1;
+      padding: 12px 14px;
+      border: 2px solid var(--naver-green);
+      border-radius: 999px;
+      outline: none;
+      font-size: 16px;
+      background: #fff;
+    }
+    .search button {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 999px;
+      background: var(--naver-green);
+      color: #fff;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .search button:hover { filter: brightness(0.95); }
+
+    .quick {
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+      font-size: 14px;
+    }
+    .quick a { color: var(--muted); }
+    .quick a:hover { color: var(--text); }
+
+    /* GNB */
+    .gnb {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+    }
+    .gnb-inner {
+      max-width: 1080px; margin: 0 auto; padding: 8px 20px;
+      display: flex; flex-wrap: wrap; gap: 14px;
+      font-size: 15px; font-weight: 600;
+    }
+    .gnb a { color: #111; padding: 6px 8px; border-radius: 6px; }
+    .gnb a:hover { background: #f2f4f6; }
+
+    /* Layout */
+    .container {
+      max-width: 1080px;
+      margin: 18px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 16px;
+    }
+
+    .col {
+      display: grid;
+      gap: 16px;
+      align-content: start;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+    }
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+    .list { margin: 0; padding: 0; list-style: none; }
+    .list li { padding: 8px 0; border-bottom: 1px dashed var(--border); }
+    .list li:last-child { border-bottom: none; }
+    .list a { color: var(--text); }
+    .list a:hover { color: var(--link); }
+
+    .keyword-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      padding: 0; margin: 0; list-style: none;
+    }
+    .keyword-list li a {
+      display: block;
+      padding: 8px 10px;
+      background: #f3f4f6;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #111;
+    }
+    .keyword-list li a:hover { background: #e5e7eb; }
+
+    .login-box {
+      display: grid;
+      gap: 8px;
+    }
+    .login-btn {
+      display: inline-block;
+      text-align: center;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--naver-green);
+      color: #fff;
+      font-weight: 700;
+    }
+    .login-btn:hover { filter: brightness(0.95); }
+
+    /* Footer */
+    .footer {
+      max-width: 1080px;
+      margin: 24px auto 40px;
+      padding: 0 20px;
+      color: var(--muted);
+      font-size: 13px;
+      display: grid;
+      gap: 6px;
+    }
+    .footer .links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .footer a { color: var(--muted); }
+    .footer a:hover { color: var(--text); }
+
+    /* Responsive */
+    @media (max-width: 860px) {
+      .header-inner {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .quick { justify-content: flex-start; }
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo" aria-label="브랜드">NAVER</div>
+
+      <form class="search" role="search" onsubmit="event.preventDefault(); alert(document.querySelector('#q').value || '검색어를 입력하세요');">
+        <input id="q" name="q" type="text" placeholder="검색어를 입력하세요" aria-label="검색" />
+        <button type="submit" aria-label="검색">검색</button>
+      </form>
+
+      <nav class="quick" aria-label="빠른 메뉴">
+        <a href="#">메일</a>
+        <a href="#">카페</a>
+        <a href="#">블로그</a>
+        <a href="#">뉴스</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- GNB -->
+  <nav class="gnb" aria-label="주요 서비스">
+    <div class="gnb-inner">
+      <a href="#">뉴스</a>
+      <a href="#">연예</a>
+      <a href="#">스포츠</a>
+      <a href="#">쇼핑</a>
+      <a href="#">날씨</a>
+      <a href="#">사전</a>
+      <a href="#">지도</a>
+      <a href="#">증권</a>
+      <a href="#">부동산</a>
+      <a href="#">웹툰</a>
+    </div>
+  </nav>
+
+  <!-- Main -->
+  <main class="container">
+    <!-- Left Column -->
+    <section class="col" aria-label="메인 콘텐츠">
+      <article class="card">
+        <h3>헤드라인 뉴스</h3>
+        <ul class="list">
+          <li><a href="#">[단독] 샘플 뉴스 제목이 들어갑니다</a></li>
+          <li><a href="#">속보: 데모 페이지용 더미 텍스트입니다</a></li>
+          <li><a href="#">프론트엔드 연습에 적합한 간단한 목록</a></li>
+          <li><a href="#">접근성을 고려한 링크 포커스와 색상</a></li>
+          <li><a href="#">반응형 그리드 레이아웃 동작 확인</a></li>
+        </ul>
+      </article>
+
+      <article class="card">
+        <h3>오늘의 쇼핑</h3>
+        <ul class="list">
+          <li><a href="#">인기 상품 1 — 더미 링크</a></li>
+          <li><a href="#">인기 상품 2 — 더미 링크</a></li>
+          <li><a href="#">인기 상품 3 — 더미 링크</a></li>
+          <li><a href="#">인기 상품 4 — 더미 링크</a></li>
+        </ul>
+      </article>
+    </section>
+
+    <!-- Right Column -->
+    <aside class="col" aria-label="사이드바">
+      <section class="card">
+        <h3>실시간 키워드</h3>
+        <ul class="keyword-list">
+          <li><a href="#">프론트엔드</a></li>
+          <li><a href="#">HTML</a></li>
+          <li><a href="#">CSS</a></li>
+          <li><a href="#">JavaScript</a></li>
+          <li><a href="#">React</a></li>
+          <li><a href="#">Node.js</a></li>
+        </ul>
+      </section>
+
+      <section class="card login-box" aria-label="로그인">
+        <h3>네이버 로그인 (데모)</h3>
+        <a class="login-btn" href="#" role="button">로그인</a>
+        <div style="font-size:13px; color: var(--muted);">
+          데모 페이지입니다. 실제 서비스가 아닙니다.
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="푸터">
+    <div class="links">
+      <a href="#">이용약관</a>
+      <a href="#">개인정보처리방침</a>
+      <a href="#">고객센터</a>
+      <a href="#">광고</a>
+    </div>
+    <div>© 2025 Demo Page. This is a practice page that imitates the layout style.</div>
+  </footer>
+</body>
+</html>
