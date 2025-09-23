@@ -11,3 +11,29 @@ function func() {
     console.log("func 중복선언"); // func 중복선언이 출력
 }
 
+console.log("===================================");
+
+const add = function (a, b) {
+    console.log("add");
+    return a+b;
+}
+
+let result = add(10, 20);
+console.log(result); // 30
+
+console.log("===================================");
+
+// 화살표 함수
+function func(a) {
+    console.log("func: " + a);
+}
+
+func("func 실행");
+
+const func2 = (a) => {
+    console.log("func2: " + a);
+}
+
+func2("func2 실행");
+
+// 화살표 함수 안에서의 this는 상위 스코프를 가리킨다.
