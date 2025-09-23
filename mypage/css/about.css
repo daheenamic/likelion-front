@@ -1,0 +1,30 @@
+section.main > ul {
+    text-align: left;
+    margin-left: 10px;
+}
+
+h2 {
+    margin-bottom: 3px;
+}
+
+a {
+    cursor: pointer;
+    
+}
+
+a:hover {
+    color: rgb(85, 172, 248);
+}
+
+p {
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+.portpolio li {
+    margin-bottom: 10px;
+}
+
+section.main > ul > li:not(last-child) {
+    margin-bottom: 40px;
+}

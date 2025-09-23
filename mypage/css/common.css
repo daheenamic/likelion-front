@@ -1,0 +1,82 @@
+/* 공통 스타일 시트 - 전체 웹사이트에 적용되는 기본 스타일 */
+
+@import url(reset.css);
+
+a {
+    text-decoration: none; /* 링크 밑줄 없앰 */
+    color: inherit; /* 부모 색을 갖다가 씀 */
+}
+
+body {
+    width: 1080px;
+    margin: 0px auto;
+    background-color: rgb(188, 221, 249);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header,
+section.main,
+footer {
+    margin: 0 auto;
+    background-color: rgb(211, 228, 245);
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+header {
+    height: 60px;
+    width: 1080px;
+    display: flex;  
+    align-items: center;       /* 세로 가운데 정렬 */
+    justify-content: space-between; /* 좌우 끝으로 배치 */
+    padding: 0 20px;           /* 좌우 여백 */
+    box-sizing: border-box;
+}
+
+header .logo img {
+    height: 60px;
+    width: 60px; 
+}
+
+header .logo img:hover {
+    cursor: pointer;
+    content: url("../img/logo2.png"); /* hover 시 다른 이미지로 교체 */
+}
+
+/* 기존 float 제거 */
+header ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header ul li {
+    display: inline-block;
+    width: 100px;
+    background-color: rgb(91, 151, 205);
+    color: aliceblue;
+    text-align: center;
+    padding: 7px 0;
+    box-shadow: 1px 2px 7px 1px grey;
+    margin-right: 5px;
+    border-radius: 8px;
+}
+
+section.main {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+section.main > ul > li {
+    margin-bottom: 20px;
+}
+
+section.main h2 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+footer ul {
+    text-align: center;
+    padding: 10px 0px;
+}
