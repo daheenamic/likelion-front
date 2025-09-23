@@ -1,0 +1,1 @@
+console.log("test.js파일에서 생성된 hello");
