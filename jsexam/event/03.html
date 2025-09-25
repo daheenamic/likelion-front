@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2 id="num">0</h2>
+    <div>
+        <button id="inc">+</button>
+        <button id="dec">-</button>
+    </div>
+
+    <script>
+        const incBtn = document.getElementById("inc");
+        const decBtn = document.getElementById("dec");
+        const numTag = document.getElementById("num");
+        let num = numTag.innerHTML;
+
+        incBtn.addEventListener("click", () => {
+            num = parseInt(num) + 1;
+            numTag.innerHTML = num;
+        });
+
+        decBtn.addEventListener("click", () => {
+            num = parseInt(num) - 1;
+            numTag.innerHTML = num;
+        })
+    </script>
+</body>
+</html>
